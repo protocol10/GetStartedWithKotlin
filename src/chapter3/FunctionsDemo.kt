@@ -27,6 +27,9 @@ fun main(ars: Array<String>) {
 
     println("JoinToString Optional Params ${joinToString(lstNu)}")
     println("Extension Functions" + lstNu.joinString(",", "[", "]"))
+
+    firstName = "AKSHAY"
+    println("Name is ${firstName}")
 }
 
 fun <T> joinToString(collection: Collection<T>, seperator: String = ",", prefix: String = "{", postFix: String = "}"): String {
@@ -56,3 +59,10 @@ fun <Int> Collection<Int>.joinString(seperator: String = ",", prefix: String = "
     builder.append(postFix)
     return builder.toString()
 }
+
+var firstName: String = ""
+    set(value) {
+        if (value != null)
+            field = value.toLowerCase()
+    }
+    get() = field
